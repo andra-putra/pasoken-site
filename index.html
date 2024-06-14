@@ -3,43 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Club</title>
-    <link rel="stylesheet" href="style.css">
+    <title>PC Club - University</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to the School Club</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1 id="club-title">PC Club - University</h1>
+        <div class="language-switcher">
+            <span class="lang-toggle" onclick="switchLanguage('en')">EN</span> | 
+            <span class="lang-toggle" onclick="switchLanguage('jp')">JP</span>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>The School Club is dedicated to providing students with opportunities to engage in fun and educational activities. We aim to foster a sense of community and promote personal growth through various events and projects.</p>
-    </section>
+    <div class="container">
+        <div id="intro" class="section">
+            <h2>Introduction</h2>
+            <p id="intro-text-en">Welcome to the University PC Club. We explore technology, programming, and digital creativity. Join us for workshops and events.</p>
+            <p id="intro-text-jp" style="display: none;">大学PCクラブへようこそ。私たちは、技術、プログラミング、デジタルクリエイティビティを探求しています。ワークショップやイベントに参加しましょう。</p>
+        </div>
 
-    <section id="events">
-        <h2>Upcoming Events</h2>
-        <ul>
-            <li>Event 1: Date - Description</li>
-            <li>Event 2: Date - Description</li>
-            <li>Event 3: Date - Description</li>
-        </ul>
-    </section>
+        <div id="calendar" class="section">
+            <h2>Calendar</h2>
+            <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_url" class="calendar"></iframe>
+        </div>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:schoolclub@example.com">schoolclub@example.com</a></p>
-    </section>
+        <div id="photos" class="section">
+            <h2>Photo Gallery</h2>
+            <div class="photo-gallery">
+                <img src="https://via.placeholder.com/300" alt="Photo 1">
+                <img src="https://via.placeholder.com/300" alt="Photo 2">
+                <img src="https://via.placeholder.com/300" alt="Photo 3">
+            </div>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 School Club. All rights reserved.</p>
-    </footer>
+    <script>
+        function switchLanguage(lang) {
+            if (lang === 'en') {
+                document.getElementById('intro-text-en').style.display = 'block';
+                document.getElementById('intro-text-jp').style.display = 'none';
+                document.getElementById('club-title').innerText = 'PC Club - University';
+            } else {
+                document.getElementById('intro-text-en').style.display = 'none';
+                document.getElementById('intro-text-jp').style.display = 'block';
+                document.getElementById('club-title').innerText = 'PCクラブ - 大学';
+            }
+        }
+    </script>
 </body>
 </html>
-
