@@ -3,52 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Club - University</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TIU Computer & Tech Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function switchLanguage(lang) {
+            var elementsEn = document.getElementsByClassName('lang-en');
+            var elementsJp = document.getElementsByClassName('lang-jp');
+            if (lang === 'en') {
+                for (var i = 0; i < elementsEn.length; i++) {
+                    elementsEn[i].style.display = 'block';
+                }
+                for (var i = 0; i < elementsJp.length; i++) {
+                    elementsJp[i].style.display = 'none';
+                }
+                document.getElementById('club-title').innerText = 'TIU Computer & Tech Club';
+            } else {
+                for (var i = 0; i < elementsEn.length; i++) {
+                    elementsEn[i].style.display = 'none';
+                }
+                for (var i = 0; i < elementsJp.length; i++) {
+                    elementsJp[i].style.display = 'block';
+                }
+                document.getElementById('club-title').innerText = 'TIUパソコン研究愛好会';
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1 id="club-title">PC Club - University</h1>
+        <h1 id="club-title">TIU Computer & Tech Club</h1>
         <div class="language-switcher">
             <span class="lang-toggle" onclick="switchLanguage('en')">EN</span> | 
             <span class="lang-toggle" onclick="switchLanguage('jp')">JP</span>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#main-info">Main Info</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#news-events">News/Events</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
-        <div id="intro" class="section">
-            <h2>Introduction</h2>
-            <p id="intro-text-en">Welcome to the University PC Club. We explore technology, programming, and digital creativity. Join us for workshops and events.</p>
-            <p id="intro-text-jp" style="display: none;">TIU パソコン研究愛好会へようこそ。</p>
+        <div id="main-info" class="section">
+            <h2 class="lang-en">Introduction</h2>
+            <h2 class="lang-jp" style="display: none;">紹介</h2>
+            <p class="lang-en">Welcome to the University PC Club. We explore technology, programming, and digital creativity. Join us for workshops and events.</p>
+            <p class="lang-jp" style="display: none;">TIU パソコン研究愛好会へようこそ。技術、プログラミング、デジタルクリエイティビティを探求します。ワークショップやイベントに参加してください。</p>
         </div>
 
         <div id="calendar" class="section">
-            <h2>Calendar</h2>
+            <h2 class="lang-en">Calendar</h2>
+            <h2 class="lang-jp" style="display: none;">カレンダー</h2>
             <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_url" class="calendar"></iframe>
         </div>
 
-        <div id="photos" class="section">
-            <h2>Photo Gallery</h2>
-            <div class="photo-gallery">
-                <img src="https://via.placeholder.com/300" alt="Photo 1">
-                <img src="https://via.placeholder.com/300" alt="Photo 2">
-                <img src="https://via.placeholder.com/300" alt="Photo 3">
-            </div>
+        <div id="news-events" class="section">
+            <h2 class="lang-en">News/Events</h2>
+            <h2 class="lang-jp" style="display: none;">ニュース/イベント</h2>
+            <p class="lang-en">Stay tuned for upcoming events and latest news.</p>
+            <p class="lang-jp" style="display: none;">今後のイベントや最新ニュースをお見逃しなく。</p>
+        </div>
+
+        <div id="contacts" class="section">
+            <h2 class="lang-en">Contacts</h2>
+            <h2 class="lang-jp" style="display: none;">連絡先</h2>
+            <p class="lang-en">For inquiries, please email us at pcclub@university.edu</p>
+            <p class="lang-jp" style="display: none;">お問い合わせは、pcclub@university.edu までメールしてください。</p>
         </div>
     </div>
-
-    <script>
-        function switchLanguage(lang) {
-            if (lang === 'en') {
-                document.getElementById('intro-text-en').style.display = 'block';
-                document.getElementById('intro-text-jp').style.display = 'none';
-                document.getElementById('club-title').innerText = 'PC Club - University';
-            } else {
-                document.getElementById('intro-text-en').style.display = 'none';
-                document.getElementById('intro-text-jp').style.display = 'block';
-                document.getElementById('club-title').innerText = 'PCクラブ - 大学';
-            }
-        }
-    </script>
 </body>
 </html>
+
